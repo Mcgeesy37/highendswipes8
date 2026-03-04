@@ -148,4 +148,29 @@
     if (e.key === "Escape") closeModal();
   });
 
+  const orb = document.getElementById("orb");
+const orbWrap = document.getElementById("orbWrap");
+
+if (orb && orbWrap){
+
+orbWrap.addEventListener("mousemove",(e)=>{
+
+const rect = orbWrap.getBoundingClientRect();
+
+const x = (e.clientX - rect.left) / rect.width - 0.5;
+const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+orb.style.transform =
+`rotateY(${x*40}deg) rotateX(${-y*30}deg)`;
+
+});
+
+orbWrap.addEventListener("mouseleave",()=>{
+
+orb.style.transform="rotateY(0deg) rotateX(0deg)";
+
+});
+
+}
+
 })();

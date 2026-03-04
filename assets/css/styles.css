@@ -314,17 +314,56 @@ img{max-width:100%; display:block}
   box-shadow: var(--shadow);
 }
 .orb{
-  position:absolute;
-  width:280px; height:280px;
-  border-radius:50%;
-  right:60px; top:70px;
-  transform: translateZ(0);
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.15), transparent 55%),
-    radial-gradient(circle at 50% 55%, rgba(200,169,106,0.20), rgba(200,169,106,0.06) 45%, transparent 70%);
-  border:1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 30px 120px rgba(0,0,0,0.7);
-  animation: floatOrb 10s ease-in-out infinite;
+
+position:absolute;
+width:280px;
+height:280px;
+border-radius:50%;
+
+right:60px;
+top:70px;
+
+background:
+radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent 40%),
+radial-gradient(circle at 70% 70%, rgba(200,169,106,0.3), transparent 50%),
+radial-gradient(circle at center, rgba(200,169,106,0.4), rgba(200,169,106,0.05));
+
+box-shadow:
+
+0 40px 120px rgba(0,0,0,0.8),
+inset 0 0 60px rgba(255,255,255,0.15),
+inset 0 0 100px rgba(200,169,106,0.2);
+
+border:1px solid rgba(255,255,255,0.15);
+
+transform-style:preserve-3d;
+
+animation:floatOrb 10s ease-in-out infinite;
+
+}
+.orb::before,
+.orb::after{
+
+content:"";
+position:absolute;
+inset:-30px;
+
+border-radius:50%;
+
+border:1px dashed rgba(200,169,106,0.35);
+
+animation:spin 18s linear infinite;
+
+}
+
+.orb::after{
+
+inset:-60px;
+
+border:1px dashed rgba(255,255,255,0.15);
+
+animation-duration:26s;
+
 }
 @keyframes floatOrb{
   0%{ transform: translateY(0) rotate(0deg) }

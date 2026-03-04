@@ -301,12 +301,12 @@ img{max-width:100%; display:block}
 /* HERO VISUAL / ORB */
 .hero-visual{
   position:relative;
-  min-height:420px;
+  height:420px;
 }
 .orb-wrap{
   position:relative;
   width:100%;
-  height:420px;
+  height:100%;
   border-radius:22px;
 
   background: radial-gradient(
